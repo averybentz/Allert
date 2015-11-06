@@ -12,13 +12,19 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBOutlet var notificationsTableView: UITableView!
     
-    var notifications: NSMutableArray = ["Welcome to Allert. Hopefully you enjoy our software! Please share with your friends!"]
-    var dates: NSMutableArray = []
+    var notifications: NSMutableArray = [] //Array for notifications
+    var dates: NSMutableArray = [] //Array for notifications corresponding date
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Set up NSUserDefaults to hold notifications "stuff"
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(notifications, forKey: "notificationsKey")//Holds notifications
+        userDefaults.setObject(dates, forKey: "datesKey")//Holds dates
+        userDefaults.synchronize()
         
         //Change nav bar colour
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.78039216, green: 0.81960784, blue: 0.84705882, alpha: 1)
@@ -30,11 +36,31 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         //Set formatter style to e.g.(Sunday, August 23, 2015)
         formatter.dateStyle = .FullStyle
         //Pass in current date
-        let datePrint = formatter.stringFromDate(date)
+        let postDatePrint = formatter.stringFromDate(date)
         
-        //If object at index 0 in dates array has not been set yet, set it add the current day to that index in the dates array
+        //Add initial Notification
+        if(notifications.count == 0){
+            notifications.addObject("Welcome to Allert. Hopefully you enjoy our software! Please share with your friends!")
+            //Add it to saved array via NSUserDefaults
+            userDefaults.setObject(notifications, forKey: "notificationsKey")
+            userDefaults.synchronize()
+            
+            /*
+             TEST:
+            print(userDefaults.objectForKey("notificationsKey"))
+            */
+        }
+        //Add initial, corresponding date
         if(dates.count == 0){
-            dates.addObject(datePrint)
+            dates.addObject(postDatePrint)
+            //Add it to saved array via NSUserDefaults
+            userDefaults.setObject(notifications, forKey: "datesKey")
+            userDefaults.synchronize()
+            
+            /*
+            TEST:
+            print(userDefaults.objectForKey("notificationsKey"))
+            */
         }
     }
 
