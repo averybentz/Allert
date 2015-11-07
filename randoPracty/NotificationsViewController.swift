@@ -22,15 +22,29 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         
         //Set up NSUserDefaults to hold notifications "stuff"
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(notifications, forKey: "notificationsKey")//Holds notifications
-        userDefaults.setObject(dates, forKey: "datesKey")//Holds dates
-        userDefaults.synchronize()
-        
+
+        //userDefaults.setObject(notifications, forKey: "notificationsKey")//Holds notifications
+        //userDefaults.setObject(dates, forKey: "datesKey")//Holds dates
+        //userDefaults.synchronize()
+
         //Change nav bar colour
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.78039216, green: 0.81960784, blue: 0.84705882, alpha: 1)
         
         //Get current date when VC opens
         let date = NSDate()
+        
+        
+        //Add it to saved array via NSUserDefaults
+        [userDefaults.setObject("fuck", forKey: "datesKey")]
+        userDefaults.synchronize()
+        //dates.addObject("hi")
+        //Add it to saved array via NSUserDefaults
+        [userDefaults.setObject("hi", forKey: "datesKey")]
+        userDefaults.synchronize()
+        
+        dates.addObjectsFromArray([userDefaults.objectForKey("datesKey")!])
+        
+        print(dates)
         
         let formatter = NSDateFormatter()
         //Set formatter style to e.g.(Sunday, August 23, 2015)
@@ -54,13 +68,13 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         if(dates.count == 0){
             dates.addObject(postDatePrint)
             //Add it to saved array via NSUserDefaults
-            userDefaults.setObject(notifications, forKey: "datesKey")
+            userDefaults.setObject(dates, forKey: "datesKey")
             userDefaults.synchronize()
             
-            /*
-            TEST:
-            print(userDefaults.objectForKey("notificationsKey"))
-            */
+            
+            //TEST:
+            print(userDefaults.objectForKey("datesKey"))
+
         }
     }
 
@@ -79,7 +93,7 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         //Set notificationsLabel of cells
         cell.notificationsLabel.text = notifications[indexPath.row] as? String
         //Set datesLabel of cells
-        cell.datesLabel.text = dates[indexPath.row] as? String
+        cell.datesLabel.text = String(dates.count)
         
         return cell
     }
