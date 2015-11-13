@@ -27,13 +27,12 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         //Set notifications array up with saved NSUSERDefaults BUT ONLY IF it is has contents
         if (userDefaults.objectForKey("notificationsKey") != nil){
             notifications.addObjectsFromArray([userDefaults.objectForKey("notificationsKey")!])
-            //notificationsTableView.reloadData()
+            
         }
         //Set dates array up with saved NSUSERDefaults BUT ONLY IF it is has contents
         if (userDefaults.objectForKey("datesKey") != nil){
             dates.addObjectsFromArray([userDefaults.objectForKey("datesKey")!])
             print(userDefaults.objectForKey("datesKey")!)
-            //notificationsTableView.reloadData()
             
         }
         
@@ -85,7 +84,7 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         let cell = notificationsTableView.dequeueReusableCellWithIdentifier("notificationsCell") as! NotificationsTableViewCell
         //Set notificationsLabel of cells
         print(notifications[indexPath.row])
-        cell.notificationsLabel.text = notifications[indexPath.row] as? String //as? String
+        cell.notificationsLabel.text = notifications[indexPath.row] as? String
         //Set datesLabel of cells
         cell.datesLabel.text = dates[indexPath.row] as? String
         
