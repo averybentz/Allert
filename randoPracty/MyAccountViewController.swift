@@ -19,7 +19,7 @@ class MyAccountViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         //Change nav bar colour
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.78039216, green: 0.81960784, blue: 0.84705882, alpha: 1)
     }
