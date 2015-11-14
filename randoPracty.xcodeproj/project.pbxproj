@@ -97,7 +97,7 @@
 		E07290B51B7E5FD900E72B8C /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		E07290B61B7E5FD900E72B8C /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		E0763E311B730E950036B5BE /* NearMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
-		E07679D11B81132A008476ED /* randoPracty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "randoPracty-Bridging-Header.h"; sourceTree = "<group>"; };
+		E07679D11B81132A008476ED /* randoPracty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "randoPracty-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		E0ABEC7B1B74623D003C3A43 /* EditYourProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditYourProfileViewController.swift; sourceTree = "<group>"; };
 		E0B480531BF6C50100178265 /* AWSAutoScaling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAutoScaling.framework; path = "../../../Frameworks/aws-ios-sdk-2.3.0/frameworks/AWSAutoScaling.framework"; sourceTree = "<group>"; };
 		E0B480541BF6C50100178265 /* AWSCloudWatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCloudWatch.framework; path = "../../../Frameworks/aws-ios-sdk-2.3.0/frameworks/AWSCloudWatch.framework"; sourceTree = "<group>"; };
@@ -212,7 +212,6 @@
 				E05980041B6DA25D0077F8F7 /* randoPracty */,
 				E059801A1B6DA25D0077F8F7 /* randoPractyTests */,
 				E05980031B6DA25D0077F8F7 /* Products */,
-				E07679D11B81132A008476ED /* randoPracty-Bridging-Header.h */,
 				CEEBD0942D99AB46871EDE10 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -249,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E05980061B6DA25D0077F8F7 /* Info.plist */,
+				E07679D11B81132A008476ED /* randoPracty-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -699,61 +699,7 @@
 				INFOPLIST_FILE = randoPracty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-l\"AWSAutoScaling\"",
-					"-l\"AWSCloudWatch\"",
-					"-l\"AWSCognito\"",
-					"-l\"AWSCore\"",
-					"-l\"AWSDynamoDB\"",
-					"-l\"AWSEC2\"",
-					"-l\"AWSElasticLoadBalancing\"",
-					"-l\"AWSKinesis\"",
-					"-l\"AWSLambda\"",
-					"-l\"AWSMachineLearning\"",
-					"-l\"AWSMobileAnalytics\"",
-					"-l\"AWSS3\"",
-					"-l\"AWSSES\"",
-					"-l\"AWSSNS\"",
-					"-l\"AWSSQS\"",
-					"-l\"AWSSimpleDB\"",
-					"-l\"c++\"",
-					"-l\"icucore\"",
-					"-l\"z\"",
-					"-l\"sqlite3\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"CoreBluetooth\"",
-					"-framework",
-					"\"CoreData\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GLKit\"",
-					"-framework",
-					"\"GoogleMaps\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Allert.randoPracty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -779,61 +725,7 @@
 				INFOPLIST_FILE = randoPracty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-l\"AWSAutoScaling\"",
-					"-l\"AWSCloudWatch\"",
-					"-l\"AWSCognito\"",
-					"-l\"AWSCore\"",
-					"-l\"AWSDynamoDB\"",
-					"-l\"AWSEC2\"",
-					"-l\"AWSElasticLoadBalancing\"",
-					"-l\"AWSKinesis\"",
-					"-l\"AWSLambda\"",
-					"-l\"AWSMachineLearning\"",
-					"-l\"AWSMobileAnalytics\"",
-					"-l\"AWSS3\"",
-					"-l\"AWSSES\"",
-					"-l\"AWSSNS\"",
-					"-l\"AWSSQS\"",
-					"-l\"AWSSimpleDB\"",
-					"-l\"c++\"",
-					"-l\"icucore\"",
-					"-l\"z\"",
-					"-l\"sqlite3\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"CoreBluetooth\"",
-					"-framework",
-					"\"CoreData\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GLKit\"",
-					"-framework",
-					"\"GoogleMaps\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Allert.randoPracty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -852,6 +744,7 @@
 				);
 				INFOPLIST_FILE = randoPractyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Allert.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/randoPracty.app/randoPracty";
@@ -865,6 +758,7 @@
 				FRAMEWORK_SEARCH_PATHS = /Users/averybentz/Desktop/GitHub/randoPracty/randoPracty;
 				INFOPLIST_FILE = randoPractyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Allert.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/randoPracty.app/randoPracty";
