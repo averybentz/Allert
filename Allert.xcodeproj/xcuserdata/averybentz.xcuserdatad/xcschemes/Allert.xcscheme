@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0C9F16E1B6FD03D002B42BE"
-               BuildableName = "hey.app"
-               BlueprintName = "hey"
-               ReferencedContainer = "container:randoPracty.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0C9F1821B6FD03D002B42BE"
-               BuildableName = "heyTests.xctest"
-               BlueprintName = "heyTests"
-               ReferencedContainer = "container:randoPracty.xcodeproj">
+               BlueprintIdentifier = "E05980011B6DA25D0077F8F7"
+               BuildableName = "Allert.app"
+               BlueprintName = "Allert"
+               ReferencedContainer = "container:Allert.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0C9F1821B6FD03D002B42BE"
-               BuildableName = "heyTests.xctest"
-               BlueprintName = "heyTests"
-               ReferencedContainer = "container:randoPracty.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E0C9F16E1B6FD03D002B42BE"
-            BuildableName = "hey.app"
-            BlueprintName = "hey"
-            ReferencedContainer = "container:randoPracty.xcodeproj">
+            BlueprintIdentifier = "E05980011B6DA25D0077F8F7"
+            BuildableName = "Allert.app"
+            BlueprintName = "Allert"
+            ReferencedContainer = "container:Allert.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E0C9F16E1B6FD03D002B42BE"
-            BuildableName = "hey.app"
-            BlueprintName = "hey"
-            ReferencedContainer = "container:randoPracty.xcodeproj">
+            BlueprintIdentifier = "E05980011B6DA25D0077F8F7"
+            BuildableName = "Allert.app"
+            BlueprintName = "Allert"
+            ReferencedContainer = "container:Allert.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E0C9F16E1B6FD03D002B42BE"
-            BuildableName = "hey.app"
-            BlueprintName = "hey"
-            ReferencedContainer = "container:randoPracty.xcodeproj">
+            BlueprintIdentifier = "E05980011B6DA25D0077F8F7"
+            BuildableName = "Allert.app"
+            BlueprintName = "Allert"
+            ReferencedContainer = "container:Allert.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -4,15 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>hey.xcscheme</key>
+		<key>Allert.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>randoPracty.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>17</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

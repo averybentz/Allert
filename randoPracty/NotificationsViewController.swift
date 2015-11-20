@@ -12,8 +12,8 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBOutlet var notificationsTableView: UITableView!
     
-    var notifications:[NSString] = NSUserDefaults.standardUserDefaults().objectForKey("notificationsKey") as! [NSString]//Array for notifications
-    var dates: [NSString] = NSUserDefaults.standardUserDefaults().objectForKey("datesKey") as! [NSString] //Array for notifications corresponding date
+    var notifications = [NSString]()//Array for notifications
+    var dates = [NSString]()//Array for notifications corresponding date
     var userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
@@ -47,6 +47,9 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
             userDefaults.synchronize()
         }
         
+        //Now that we can assure our desired object is not empty, we can set notifications array using it's corresponding NSUserDefaults key
+        notifications = NSUserDefaults.standardUserDefaults().objectForKey("notificationsKey") as! [NSString]
+        
         //Add initial, "welcoming" corresponding date if not already saved
         if(userDefaults.objectForKey("datesKey") == nil){
             dates.append(postDatePrint)
@@ -55,6 +58,9 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
             userDefaults.setObject(dates, forKey: "datesKey")
             userDefaults.synchronize()
         }
+        
+        //Now that we can assure our desired object is not empty, we can set notifications array using it's corresponding NSUserDefaults key
+        dates = NSUserDefaults.standardUserDefaults().objectForKey("datesKey") as! [NSString]
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +74,8 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = notificationsTableView.dequeueReusableCellWithIdentifier("notificationsCell") as! NotificationsTableViewCell
+        
         //Set notificationsLabel of cells
-        print(notifications[indexPath.row] as String)
         cell.notificationsLabel.text = notifications[indexPath.row] as String//notifications[indexPath.row] as? String
         //Set datesLabel of cells
         cell.datesLabel.text = dates[indexPath.row] as String
