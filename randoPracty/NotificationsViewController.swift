@@ -12,29 +12,15 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBOutlet var notificationsTableView: UITableView!
     
-    var notifications: NSMutableArray = [] //Array for notifications
-    var dates: NSMutableArray = [] //Array for notifications corresponding date
+    var notifications:[NSString] = NSUserDefaults.standardUserDefaults().objectForKey("notificationsKey") as! [NSString]//Array for notifications
+    var dates: [NSString] = NSUserDefaults.standardUserDefaults().objectForKey("datesKey") as! [NSString] //Array for notifications corresponding date
+    var userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Change nav bar colour
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.78039216, green: 0.81960784, blue: 0.84705882, alpha: 1)
-        
-        ///Set up NSUserDefaults to hold notifications "stuff"
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        //Set notifications array up with saved NSUSERDefaults BUT ONLY IF it is has contents
-        if (userDefaults.objectForKey("notificationsKey") != nil){
-            notifications.addObjectsFromArray([userDefaults.objectForKey("notificationsKey")!])
-            
-        }
-        //Set dates array up with saved NSUSERDefaults BUT ONLY IF it is has contents
-        if (userDefaults.objectForKey("datesKey") != nil){
-            dates.addObjectsFromArray([userDefaults.objectForKey("datesKey")!])
-            print(userDefaults.objectForKey("datesKey")!)
-            
-        }
         
         /****
          Retrieving current date
@@ -54,7 +40,7 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         
         //Add initial "wecloming" notification if not already saved
         if(userDefaults.objectForKey("notificationsKey") == nil){
-            notifications.addObject("Welcome to Allert. Hopefully you enjoy our software! Please share with your friends!")
+            notifications.append("Welcome to Allert. Hopefully you enjoy our software! Please share with your friends!")
             
             //Add it to saved array via NSUserDefaults
             userDefaults.setObject(notifications, forKey: "notificationsKey")
@@ -63,7 +49,7 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
         
         //Add initial, "welcoming" corresponding date if not already saved
         if(userDefaults.objectForKey("datesKey") == nil){
-            dates.addObject(postDatePrint)
+            dates.append(postDatePrint)
             
             //Add it to saved array via NSUserDefaults
             userDefaults.setObject(dates, forKey: "datesKey")
@@ -83,10 +69,10 @@ class NotificationsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = notificationsTableView.dequeueReusableCellWithIdentifier("notificationsCell") as! NotificationsTableViewCell
         //Set notificationsLabel of cells
-        print(notifications[indexPath.row])
-        cell.notificationsLabel.text = notifications[indexPath.row] as? String
+        print(notifications[indexPath.row] as String)
+        cell.notificationsLabel.text = notifications[indexPath.row] as String//notifications[indexPath.row] as? String
         //Set datesLabel of cells
-        cell.datesLabel.text = dates[indexPath.row] as? String
+        cell.datesLabel.text = dates[indexPath.row] as String
         
         return cell
     }
