@@ -17,7 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //AIzaSyDlehy6_Rz3YzIphzprc6UTj1ALT5v21Cw
         GMSServices.provideAPIKey("AIzaSyDlehy6_Rz3YzIphzprc6UTj1ALT5v21Cw")
+
+        //Initialize the Amazon Cognito credentials provider
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:f136e723-eb9b-4cc4-8204-88688f351d62")
+        let defaultConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
+        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = defaultConfiguration
         
+        //Make a call to the AWS services:
+        let dynamoDB = AWSDynamoDB.defaultDynamoDB()
+        let listTableInput = AWSDynamoDBListTablesInput()
+        dynamoDB.listTables(listTableInput).continueWithBlock{ (task: AWSTask!) -> AnyObject! in
+            if let error = task.error {
+                print("Error occurred: \(error)")
+                return nil
+            }
+            
+            let listTablesOutput = task.result as! AWSDynamoDBListTablesOutput
+            
+            for tableName: AnyObject in listTablesOutput.tableNames {
+                print("\(tableName)")
+            }
+            
+            return nil
+        }
+
         return true
 
     }
