@@ -695,11 +695,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					/Users/averybentz/Desktop/GitHub/randoPracty/Pods/GoogleMaps,
-					"$(PROJECT_DIR)/randoPracty",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/randoPracty";
 				INFOPLIST_FILE = randoPracty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
@@ -721,11 +717,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					/Users/averybentz/Desktop/GitHub/randoPracty/Pods/GoogleMaps,
-					"$(PROJECT_DIR)/randoPracty",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/randoPracty";
 				INFOPLIST_FILE = randoPracty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
