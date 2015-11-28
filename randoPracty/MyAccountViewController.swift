@@ -22,13 +22,38 @@ class MyAccountViewController: UIViewController, UIImagePickerControllerDelegate
 
         //Change nav bar colour
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.78039216, green: 0.81960784, blue: 0.84705882, alpha: 1)
+        
+        /*
+
+        /****
+        AWS Test
+        ****/
+        
+        //Construct the NSURL for the download location.
+        let downloadingFilePath = NSTemporaryDirectory().stringByAppendingString("downloadedAllertIcon")
+        let downloadingFileURL = NSURL.fileURLWithPath(downloadingFilePath)
+
+        //Construct the download request.
+        let downloadRequest = AWSS3TransferManagerDownloadRequest()
+        downloadRequest.bucket = "allert"
+        downloadRequest.key = "allertIcon.png"// File name on s3
+        downloadRequest.downloadingFileURL = downloadingFileURL
+        
+        //Download the file
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        transferManager.download(downloadRequest)
+        
+        //Test by setting profileImageView to s3 image
+        self.profileImageView.image = UIImage(contentsOfFile: downloadingFilePath)//Works
+        
+        */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func profileImageChangeButtonClicked(sender: AnyObject) {
         //Set delegate of profileImagePicker
         self.profileImagePicker.delegate = self
