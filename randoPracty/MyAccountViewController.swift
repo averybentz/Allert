@@ -13,6 +13,7 @@ class MyAccountViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet var profileImageView: UIImageView!
     
     var profileImagePicker = UIImagePickerController()
+    var thisMenuItem = ""
 
     
     override func viewDidLoad() {
@@ -46,6 +47,30 @@ class MyAccountViewController: UIViewController, UIImagePickerControllerDelegate
         //Test by setting profileImageView to s3 image
         self.profileImageView.image = UIImage(contentsOfFile: downloadingFilePath)//Works
         
+        */
+        
+        /*
+        //Construct the NSURL for the download location.
+        let downloadingFilePath = NSTemporaryDirectory().stringByAppendingString("downloadedFirstMenu")
+        let downloadingFileURL = NSURL.fileURLWithPath(downloadingFilePath)
+        
+        //Construct the download request.
+        let downloadRequest = AWSS3TransferManagerDownloadRequest()
+        downloadRequest.bucket = "allert"
+        downloadRequest.key = "Kelsey's"// File name on s3
+        downloadRequest.downloadingFileURL = downloadingFileURL
+        
+        //Download the file
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        transferManager.download(downloadRequest)
+        
+        //Add s3 item to thisMenuItem
+        do {
+            thisMenuItem = try NSString(contentsOfFile: downloadingFilePath, encoding: NSUTF8StringEncoding) as String
+            
+        } catch {
+            
+        }
         */
     }
 
