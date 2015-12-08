@@ -23,17 +23,11 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="ZXW-qd-J0o">
-                                <rect key="frame" x="285" y="273" width="30" height="55"/>
-                                <animations/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.99926004059999995" green="1" blue="0.98707475160000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="u0c-R9-NMw" firstAttribute="top" secondItem="l2o-bE-TLl" secondAttribute="bottom" id="5l4-pJ-3C9"/>
-                            <constraint firstAttribute="centerX" secondItem="ZXW-qd-J0o" secondAttribute="centerX" id="EV9-2l-Fcs"/>
-                            <constraint firstAttribute="centerY" secondItem="ZXW-qd-J0o" secondAttribute="centerY" id="GFO-FB-WLl"/>
                             <constraint firstItem="u0c-R9-NMw" firstAttribute="leading" secondItem="iXG-U0-BMa" secondAttribute="leading" id="JVF-qM-C9Q"/>
                             <constraint firstItem="6ep-bK-BgM" firstAttribute="top" secondItem="u0c-R9-NMw" secondAttribute="bottom" id="XCf-Ap-BYu"/>
                             <constraint firstAttribute="trailing" secondItem="u0c-R9-NMw" secondAttribute="trailing" id="qXi-tE-vQv"/>
@@ -54,14 +48,8 @@
                                 <action selector="mapTypesSegmentPressed:" destination="vHf-xX-28A" eventType="valueChanged" id="lQo-Lv-F7E"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="6jD-Rg-1Cv">
-                            <connections>
-                                <segue destination="rvA-6Q-Ruk" kind="presentation" identifier="Types Segue" id="UXx-TX-9fk"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapCenterPinImage" destination="ZXW-qd-J0o" id="YK2-7f-ijl"/>
                         <outlet property="mapView" destination="u0c-R9-NMw" id="81i-8u-kuU"/>
                     </connections>
                 </viewController>
@@ -629,73 +617,6 @@
             </objects>
             <point key="canvasLocation" x="1508" y="-1162"/>
         </scene>
-        <!--Choose Types-->
-        <scene sceneID="CsG-Dc-7ET">
-            <objects>
-                <tableViewController storyboardIdentifier="Types Segue" id="W0C-rG-QZE" customClass="TypesTableViewController" customModule="Allert" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="J2e-x6-QHD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TypeCell" textLabel="2F7-Cf-m0W" style="IBUITableViewCellStyleDefault" id="pjM-5K-UfE">
-                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjM-5K-UfE" id="jeV-jb-tDl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2F7-Cf-m0W">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="W0C-rG-QZE" id="huU-VT-wpW"/>
-                            <outlet property="delegate" destination="W0C-rG-QZE" id="MIU-Oz-lDT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Choose Types" id="FBL-Qa-h8B">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="QA5-oa-TmK">
-                            <connections>
-                                <action selector="donePressed:" destination="W0C-rG-QZE" id="2vE-Rq-4yh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WFb-bV-a1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3840" y="265"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="1Oq-Gs-X03">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rvA-6Q-Ruk" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBC-em-lTE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="W0C-rG-QZE" kind="relationship" relationship="rootViewController" id="peM-lz-A7L"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qt6-Cx-quY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3028" y="265"/>
-        </scene>
     </scenes>
     <resources>
         <image name="AllertUser" width="491" height="640"/>
@@ -704,6 +625,5 @@
         <image name="Edit-50" width="29" height="29"/>
         <image name="High Importance Filled-50" width="29" height="29"/>
         <image name="Near Me-50" width="29" height="29"/>
-        <image name="icon_me" width="30" height="55"/>
     </resources>
 </document>

@@ -8,12 +8,11 @@
 
 import UIKit
 
-class NearMeViewController: UIViewController,TypesTableViewControllerDelegate, CLLocationManagerDelegate {
+class NearMeViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var mapView: GMSMapView!
     @IBOutlet weak var mapCenterPinImage: UIImageView!
     @IBOutlet weak var pinImageVerticalConstraint: NSLayoutConstraint!
-    var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
      
      let locationManager = CLLocationManager()
     
@@ -30,21 +29,6 @@ class NearMeViewController: UIViewController,TypesTableViewControllerDelegate, C
      //Display user's current location on the map
      locationManager.startUpdatingLocation()
 
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Types Segue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let controller = navigationController.topViewController as! TypesTableViewController
-            controller.selectedTypes = searchedTypes
-            controller.delegate = self
-        }
-    }
-    
-    // MARK: - Types Controller Delegate
-    func typesController(controller: TypesTableViewController, didSelectTypes types: [String]) {
-        searchedTypes = controller.selectedTypes.sort()
-        dismissViewControllerAnimated(true, completion: nil)
     }
      
     @IBAction func mapTypesSegmentPressed(sender: AnyObject) {
